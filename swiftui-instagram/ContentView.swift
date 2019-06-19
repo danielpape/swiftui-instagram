@@ -15,14 +15,16 @@ struct ContentView : View {
         NavigationView {
             List {
                 Section {
-                    HStack(alignment: .top) {
-                        StoryCell()
-                        StoryCell()
-                        StoryCell()
-                        StoryCell()
-                        StoryCell()
-                        
-                    }
+                    ScrollView(isScrollEnabled: true){
+                        HStack {
+                            StoryCell()
+                            StoryCell()
+                            StoryCell()
+                            StoryCell()
+                            StoryCell()
+                            
+                        }
+                    }.frame(height: 116)
                 }
                 Section {
                     ImageCell()
@@ -30,6 +32,19 @@ struct ContentView : View {
                     ImageCell()
                 }
                 }.navigationBarTitle(Text("Instagram"), displayMode: .inline)
+                .navigationBarItems(
+                    leading:
+                        Button(
+                            action: { print("Going to Setting") },
+                            label: { Image(systemName: "camera")}
+                        ),
+                    trailing:
+                        Button(
+                            action: { print("Going to Setting") },
+                            label: { Image(systemName: "paperplane")}
+                            )
+                         
+            )
         }
     }
     
