@@ -29,8 +29,8 @@ struct ContentView : View {
                     ImageCell()
                     ImageCell()
                 }
-            }
-            }.navigationBarTitle(Text("Instagram"))
+                }.navigationBarTitle(Text("Instagram"), displayMode: .inline)
+        }
     }
     
     func tapButton() {
